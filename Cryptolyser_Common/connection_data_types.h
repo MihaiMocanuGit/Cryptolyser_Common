@@ -3,14 +3,22 @@
 
 #include <stdint.h>
 
-/// The maximum 'safe' UDP payload is 508 bytes, so by subtracting the size of packet_id and
-/// data_length, we obtain the recommended byte data size.
-#define CONNECTION_DATA_MAX_SIZE (508 - 2 * sizeof(uint32_t))
+#define CONNECTION_DATA_MAX_SIZE (1024 - 3 * sizeof(uint32_t))
 
 #pragma pack(1)
 struct connection_packet_t
 {
     uint32_t packet_id;
+    uint32_t data_length;
+    uint8_t byte_data[CONNECTION_DATA_MAX_SIZE];
+};
+#pragma pack(0)
+
+#pragma pack(1)
+struct connection_key_packet_t
+{
+    uint32_t packet_id;
+    uint32_t key;   // 128 - 256-bit key
     uint32_t data_length;
     uint8_t byte_data[CONNECTION_DATA_MAX_SIZE];
 };
