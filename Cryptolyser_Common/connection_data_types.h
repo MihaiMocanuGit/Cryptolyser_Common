@@ -28,10 +28,10 @@ struct connection_key_packet_t
 struct connection_timing_t
 {
     uint32_t packet_id;
-    uint64_t inbound_sec;
-    uint64_t inbound_nsec;
-    uint64_t outbound_sec;
-    uint64_t outbound_nsec;
+    uint64_t inbound_t1;
+    uint64_t inbound_t2;
+    uint64_t outbound_t1;
+    uint64_t outbound_t2;
 };
 #pragma pack(0)
 
