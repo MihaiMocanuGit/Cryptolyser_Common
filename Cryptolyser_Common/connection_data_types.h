@@ -15,6 +15,7 @@ struct connection_packet_t
 #pragma pack(0)
 
 #define PACKET_KEY_BYTE_SIZE 16
+#define AES_BLOCK_BYTE_SIZE 16
 #pragma pack(1)
 struct connection_key_packet_t
 {
