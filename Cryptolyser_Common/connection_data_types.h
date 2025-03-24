@@ -26,10 +26,12 @@ struct connection_key_packet_t
 };
 #pragma pack(0)
 
+#define PACKET_RESPONSE_DATA_SIZE AES_BLOCK_BYTE_SIZE
 #pragma pack(1)
-struct connection_timing_t
+struct connection_response_t
 {
     uint32_t packet_id;
+    uint8_t data[PACKET_RESPONSE_DATA_SIZE];
     uint64_t inbound_t1;
     uint64_t inbound_t2;
     uint64_t outbound_t1;
