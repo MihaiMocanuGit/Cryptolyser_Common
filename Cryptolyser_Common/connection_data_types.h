@@ -32,6 +32,7 @@ struct connection_response_t
     uint64_t inbound_t2;
     uint64_t outbound_t1;
     uint64_t outbound_t2;
+    uint8_t iv[AES_BLOCK_BYTE_SIZE];
 };
 
 #pragma pack(pop)
