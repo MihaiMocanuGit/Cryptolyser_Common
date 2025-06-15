@@ -7,9 +7,6 @@
 #define AES_BLOCK_BYTE_SIZE 16
 #define PACKET_RESPONSE_DATA_SIZE AES_BLOCK_BYTE_SIZE
 
-static_assert(true); // dummy declaration, ends the preamble https://stackoverflow.com/a/72907523
-                     // (Known bug in clangd causes "1. Unterminated '#pragma pack (push, ...)' at
-                     // end of file [-Wpragma-pack]" warning.
 #pragma pack(push, 1)
 
 struct connection_packet_t
